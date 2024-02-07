@@ -30,6 +30,8 @@ if config_env() == :prod do
       For example: ecto://USER:PASS@HOST/DATABASE
       """
 
+  config :featureflagservice, enabled: (System.get_env("DISABLE_FEATURE_FLAGS") == :true)
+
   maybe_ipv6 = if System.get_env("ECTO_IPV6"), do: [:inet6], else: []
 
   config :featureflagservice, Featureflagservice.Repo,
