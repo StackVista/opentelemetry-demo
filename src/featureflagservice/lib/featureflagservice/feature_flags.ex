@@ -15,6 +15,8 @@ defmodule Featureflagservice.FeatureFlags do
 
   alias Featureflagservice.FeatureFlags.FeatureFlag
 
+  def is_enabled(), do: Application.get_env(:featureflagservice, :enabled, false)
+
   @doc """
   Returns the list of featureflags.
 
