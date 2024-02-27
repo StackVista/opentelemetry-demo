@@ -38,12 +38,7 @@ build-featureflag:
   variables:
     SERVICE: featureflagservice
 
-build-adservice:
+build-loadgenerator:
   extends: .build-service
   variables:
-    SERVICE: adservice
-
-build-frauddetection:
-  extends: .build-service
-  variables:
-    SERVICE: frauddetectionservice
+    SERVICE: loadgenerator
